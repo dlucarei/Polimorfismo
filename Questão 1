@@ -1,0 +1,37 @@
+public class Calculadora {
+
+    // Versão 1
+    public int somar(int a, int b) {
+        return a + b;
+    }
+
+    // Versão 2
+    public int somar(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Versão 3
+    public double somar(double a, double b) {
+        return a + b;
+    }
+}
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        Calculadora calc = new Calculadora();
+
+        // versão 1
+        int resultado1 = calc.somar(10, 5);
+        System.out.println("Soma de dois inteiros: " + resultado1);
+
+        // versão 2
+        int resultado2 = calc.somar(3, 7, 2);
+        System.out.println("Soma de três inteiros: " + resultado2);
+
+        // versão 3
+        double resultado3 = calc.somar(4.5, 2.3);
+        System.out.println("Soma de dois doubles: " + resultado3);
+    }
+}
