@@ -1,0 +1,52 @@
+public abstract class Funcionario {
+    protected double salarioBase;
+
+    public Funcionario(double salarioBase) {
+        this.salarioBase = salarioBase;
+    }
+
+    public abstract double calcularSalarioFinal();
+}
+
+
+
+public class Desenvolvedor extends Funcionario {
+
+    public Desenvolvedor(double salarioBase) {
+        super(salarioBase);
+    }
+
+    @Override
+    public double calcularSalarioFinal() {
+        // Retorna salário base + 10% de bônus
+        return salarioBase * 1.10;
+    }
+}
+
+
+
+public class Suporte extends Funcionario {
+
+    public Suporte(double salarioBase) {
+        super(salarioBase);
+    }
+
+    @Override
+    public double calcularSalarioFinal() {
+        return salarioBase + 200.00;
+    }
+}
+
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        Funcionario dev = new Desenvolvedor(3000.00);
+        Funcionario suporte = new Suporte(2500.00);
+
+        System.out.println("=== Cálculo de Salários ===");
+        System.out.println("Desenvolvedor: R$ " + dev.calcularSalarioFinal());
+        System.out.println("Suporte: R$ " + suporte.calcularSalarioFinal());
+    }
+}
