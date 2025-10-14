@@ -1,0 +1,50 @@
+public class Funcionario {
+    private String nome;
+    private String cpf;
+
+    public Funcionario(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
+    public double calcularSalario() {
+        return 1500.00;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+}
+
+
+
+public class Gerente extends Funcionario {
+
+    public Gerente(String nome, String cpf) {
+        super(nome, cpf);
+    }
+
+    @Override
+    public double calcularSalario() {
+        return super.calcularSalario() + 500.00;
+    }
+}
+
+
+
+public class Programador extends Funcionario {
+
+    public Programador(String nome, String cpf) {
+        super(nome, cpf);
+    }
+
+    @Override
+    public double calcularSalario() {
+        // Salário base + 20% de adicional
+        return super.calcularSalario() * 1.2;
+    }
+}
